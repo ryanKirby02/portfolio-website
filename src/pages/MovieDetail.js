@@ -4,6 +4,10 @@ import { useHistory } from 'react-router-dom';
 import { MovieState } from '../movieState';
 import Award from '../components/Award';
 
+//animations
+import { motion } from 'framer-motion';
+import { pageAnimation } from '../animation';
+
 const MovieDetail = () => {
   const history = useHistory();
   const url = history.location.pathname;
@@ -19,7 +23,12 @@ const MovieDetail = () => {
   return (
     <>
       {movie && (
-        <Details>
+        <Details
+          exit='exit'
+          variants={pageAnimation}
+          initial='hidden'
+          animate='show'
+        >
           <HeadLine>
             <h2>{movie.title}</h2>
             <img src={movie.mainImg} alt='Movie' />
@@ -34,7 +43,7 @@ const MovieDetail = () => {
             ))}
           </Awards>
           <ImageDisplay>
-              <img src={movie.secondaryImg} alt="Second"/>
+            <img src={movie.secondaryImg} alt='Second' />
           </ImageDisplay>
         </Details>
       )}
@@ -42,9 +51,9 @@ const MovieDetail = () => {
   );
 };
 
-//styled components 
+//styled components
 
-const Details = styled.div`
+const Details = styled(motion.div)`
   color: white;
 `;
 const HeadLine = styled.div`
@@ -73,12 +82,12 @@ const Awards = styled.div`
 `;
 
 const ImageDisplay = styled.div`
-    min-height: 50vh;
-    img {
-        width: 100%;
-        height: 100vh;
-        object-fit: cover;
-    }
-`
+  min-height: 50vh;
+  img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+  }
+`;
 
 export default MovieDetail;

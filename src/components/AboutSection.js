@@ -4,7 +4,10 @@ import React from 'react';
 import home1 from '../img/home1.png';
 
 //styles
-import { Layout, Description, Image, Hide } from '../styles'
+import { Layout, Description, Image, Hide } from '../styles';
+
+//framer motion
+import { motion } from 'framer-motion';
 
 const AboutSection = () => {
   return (
@@ -12,7 +15,7 @@ const AboutSection = () => {
       <Description>
         <div className='title'>
           <Hide>
-            <h2>We Work To Make</h2>
+            <motion.h2>We Work To Make</motion.h2>
           </Hide>
           <Hide>
             <h2>
@@ -35,7 +38,5 @@ const AboutSection = () => {
     </Layout>
   );
 };
-
-
 
 export default AboutSection;
