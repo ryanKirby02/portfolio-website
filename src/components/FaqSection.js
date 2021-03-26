@@ -8,11 +8,14 @@ import styled from 'styled-components';
 import Toggle from './Toggle';
 
 //animation
-import {AnimateSharedLayout} from 'framer-motion';
+import { AnimateSharedLayout } from 'framer-motion';
+import { fade } from '../animation';
+import { useScroll } from './useScroll';
 
 const FaqSection = () => {
+  const [element, controls] = useScroll();
   return (
-    <Faq>
+    <Faq variants={fade} animate={controls} initial='hidden' ref={element}>
       <h2>
         Any Questions <span>FAQ</span>
       </h2>
@@ -59,6 +62,7 @@ const FaqSection = () => {
 };
 
 const Faq = styled(Layout)`
+  overflow: hidden;
   display: block;
   span {
     display: block;
