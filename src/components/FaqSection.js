@@ -2,7 +2,13 @@ import React from 'react';
 
 //styles
 import { Layout } from '../styles';
-import styled from 'styled-components'
+import styled from 'styled-components';
+
+//components
+import Toggle from './Toggle';
+
+//animation
+import {AnimateSharedLayout} from 'framer-motion';
 
 const FaqSection = () => {
   return (
@@ -10,55 +16,49 @@ const FaqSection = () => {
       <h2>
         Any Questions <span>FAQ</span>
       </h2>
-      <div className='question'>
-        <h4>How Do I Start?</h4>
-        <div className='anwser'>
-          <p>Lorem ipsum dolor sit amet.</p>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-            Asperiores, similique?
-          </p>
-        </div>
-        <div className='faq-line'></div>
-      </div>
-      <div className='question'>
-        <h4>What's Your Daily Schedule?</h4>
-        <div className='anwser'>
-          <p>Lorem ipsum dolor sit amet.</p>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-            Asperiores, similique?
-          </p>
-        </div>
-        <div className='faq-line'></div>
-      </div>
-      <div className='question'>
-        <h4>Are There Different Payment Methods?</h4>
-        <div className='anwser'>
-          <p>Lorem ipsum dolor sit amet.</p>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-            Asperiores, similique?
-          </p>
-        </div>
-        <div className='faq-line'></div>
-      </div>
-      <div className='question'>
-        <h4>What Products Do You Offer?</h4>
-        <div className='anwser'>
-          <p>Lorem ipsum dolor sit amet.</p>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-            Asperiores, similique?
-          </p>
-        </div>
-        <div className='faq-line'></div>
-      </div>
+      <AnimateSharedLayout>
+        <Toggle title='How Do I Start?'>
+          <div className='anwser'>
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Asperiores, similique?
+            </p>
+          </div>
+        </Toggle>
+        <Toggle title='What Is Your Daily Schedule?'>
+          <div className='anwser'>
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Asperiores, similique?
+            </p>
+          </div>
+        </Toggle>
+        <Toggle title='Are There Different Payment Methods?'>
+          <div className='anwser'>
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Asperiores, similique?
+            </p>
+          </div>
+        </Toggle>
+        <Toggle title='What Products Do You Offer?'>
+          <div className='anwser'>
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Asperiores, similique?
+            </p>
+          </div>
+        </Toggle>
+      </AnimateSharedLayout>
     </Faq>
   );
 };
 
-const Faq = styled(Layout) `
+const Faq = styled(Layout)`
   display: block;
   span {
     display: block;
@@ -82,8 +82,7 @@ const Faq = styled(Layout) `
     p {
       padding: 1rem 0rem;
     }
-    
   }
-`
+`;
 
 export default FaqSection;

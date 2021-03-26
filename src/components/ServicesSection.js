@@ -1,4 +1,6 @@
 import React from 'react';
+import { useInView } from 'react-intersection-observer'
+import { useAnimation } from 'framer-motion'
 
 //images and Svgs
 import clock from '../img/clock.svg';
@@ -9,7 +11,7 @@ import home2 from '../img/home2.png'
 
 //styles
 import styled from 'styled-components'
-import { Layout, Description, Image, Hide } from '../styles'
+import { Layout, Description, Image } from '../styles'
 
 const ServicesSection = () => {
   return (
