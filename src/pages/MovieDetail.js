@@ -24,7 +24,6 @@ const MovieDetail = () => {
     <>
       {movie && (
         <Details
-          exit='exit'
           variants={pageAnimation}
           initial='hidden'
           animate='show'

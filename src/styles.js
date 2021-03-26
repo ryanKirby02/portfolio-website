@@ -13,8 +13,10 @@ export const Description = styled.div `
     flex: 1;
     padding-right: 5rem;
     font-weight: lighter;
+    z-index: 2;
 `
 export const Image = styled.div `
+    z-index: 2;
     flex: 1;
     overflow: hidden;
     img {
