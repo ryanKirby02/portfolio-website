@@ -14,6 +14,7 @@ import MovieDetail from './pages/MovieDetail';
 //import components
 import Nav from './components/Nav';
 
+
 function App() {
   const location = useLocation()
   return (
