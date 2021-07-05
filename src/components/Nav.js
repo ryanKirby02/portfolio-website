@@ -2,39 +2,41 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { useLocation } from 'react-router-dom'
+import { useLocation } from 'react-router-dom';
 
 const Nav = () => {
-  const {pathname} = useLocation();
+  const { pathname } = useLocation();
 
   return (
     <StyledNav>
       <h1>
-        <Link id='logo' to='/'>Capture</Link>
+        <Link id='logo' to='/'>
+          Capture
+        </Link>
       </h1>
       <ul>
         <li>
           <Link to='/'>1. About Us</Link>
-          <Line 
-            transition={{duration: 0.75}} 
-            initial={{width: '0%'}} 
-            animate={{width: pathname === '/' ? '50%' : '0%'}} 
+          <Line
+            transition={{ duration: 0.75 }}
+            initial={{ width: null }}
+            animate={{ width: pathname === '/' ? '40%' : null }}
           />
         </li>
         <li>
           <Link to='/work'>2. Our Work</Link>
-          <Line 
-            transition={{duration: 0.75}} 
-            initial={{width: '0%'}} 
-            animate={{width: pathname === '/work' ? '50%' : '0%'}} 
+          <Line
+            transition={{ duration: 0.75 }}
+            initial={{ width: null }}
+            animate={{ width: pathname === '/work' ? '40%' : null }}
           />
         </li>
         <li>
           <Link to='/contact'>3. Contact Us</Link>
-          <Line 
-            transition={{duration: 0.75}} 
-            initial={{width: '0%'}} 
-            animate={{width: pathname === '/contact' ? '50%' : '0%'}} 
+          <Line
+            transition={{ duration: 0.75 }}
+            initial={{ width: null }}
+            animate={{ width: pathname === '/contact' ? '40%' : null }}
           />
         </li>
       </ul>
@@ -55,21 +57,21 @@ const StyledNav = styled.nav`
   top: 0;
   z-index: 10;
   a {
-      color: white;
-      text-decoration: none;
+    color: white;
+    text-decoration: none;
   }
   ul {
-      display: flex;
-      list-style: none;
+    display: flex;
+    list-style: none;
   }
   #logo {
-      font-size: 1.5rem;
-      font-family: 'Lobster', cursive;
-      font-weight: lighter;
+    font-size: 1.5rem;
+    font-family: 'Lobster', cursive;
+    font-weight: lighter;
   }
   li {
-      padding-left: 10rem;
-      position: relative;
+    padding-left: 10rem;
+    position: relative;
   }
   @media (max-width: 1300px) {
     flex-direction: column;
@@ -77,28 +79,32 @@ const StyledNav = styled.nav`
     ul {
       padding: 2rem;
       justify-content: space-around;
-      width: 100%
+      width: 100%;
     }
     li {
       padding: 0;
     }
     a {
-      font-size: 16px
+      font-size: 16px;
     }
   }
   @media (max-width: 768px) {
-    a{
+    a {
       font-size: 12px;
     }
   }
 `;
-const Line = styled(motion.div) `
+const Line = styled(motion.div)`
   height: 0.3rem;
   background: #23d997;
   width: 0%;
   position: absolute;
   left: 60%;
-  bottom: -80%
+  bottom: -80%;
+  @media (max-width: 1300px) {
+    left: 0px;
+    width: 100%;
+  }
 `;
 
 export default Nav;
