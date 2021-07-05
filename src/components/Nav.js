@@ -18,25 +18,25 @@ const Nav = () => {
         <li>
           <Link to='/'>1. About Us</Link>
           <Line
-            transition={{ duration: 0.75 }}
-            initial={{ width: null }}
-            animate={{ width: pathname === '/' ? '40%' : null }}
+            transition={{ duration: 0.50 }}
+            initial={{ width: "0%" }}
+            animate={{ width: pathname === '/' ? '40%' : null, height: pathname === '/' ? '0.3rem' : 0 }}
           />
         </li>
         <li>
           <Link to='/work'>2. Our Work</Link>
           <Line
-            transition={{ duration: 0.75 }}
-            initial={{ width: null }}
-            animate={{ width: pathname === '/work' ? '40%' : null }}
+            transition={{ duration: 0.50 }}
+            initial={{ width: "0%" }}
+            animate={{ width: pathname === '/work' ? '40%' : '0%', height: pathname === '/work' ? '0.3rem' : 0 }}
           />
         </li>
         <li>
           <Link to='/contact'>3. Contact Us</Link>
           <Line
-            transition={{ duration: 0.75 }}
-            initial={{ width: null }}
-            animate={{ width: pathname === '/contact' ? '40%' : null }}
+            transition={{ duration: 0.50 }}
+            initial={{ width: '0%' }}
+            animate={{ width: pathname === '/contact' ? '40%' : '0%', height: pathname === '/contact' ? '0.3rem' : 0 }}
           />
         </li>
       </ul>
@@ -97,7 +97,6 @@ const StyledNav = styled.nav`
 const Line = styled(motion.div)`
   height: 0.3rem;
   background: #23d997;
-  width: 0%;
   position: absolute;
   left: 60%;
   bottom: -80%;
